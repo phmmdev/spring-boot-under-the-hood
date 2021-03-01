@@ -7,7 +7,7 @@ Repository used to study about springboot concepts in a deeply way
 //First Week
 
 - [X] Introduction about Spring Framework Context;
-- [ ] Learn how to manage Context with anotations;
+- [X] Learn how to manage Context with Qualifiers and Wiring objects;
 - [ ] DataBase connectiosn, working with adapters;
 - [ ] AOP, and cool stuff;
 - [ ] Tricks about @Transaction;
