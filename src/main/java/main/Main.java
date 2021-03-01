@@ -1,6 +1,8 @@
 package main;
 
+import beans.Dog;
 import beans.MyBean;
+import beans.Owner;
 import config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import services.ProductService;
@@ -26,10 +28,18 @@ public class Main
             System.out.println("Text from Bean Method 1 "+ myBean1.getText());
             System.out.println("Text from Bean Method 2 "+ myBean2.getText());*/
 
-            ProductService productService =  context.getBean(ProductService.class);
+           /* ProductService productService =  context.getBean(ProductService.class);
 
             productService.addProduct();
-            productService.addProduct();
+            productService.addProduct();*/
+
+
+            /*Dog dog =  context.getBean(Dog.class);
+            dog.setName("Marco");*/
+
+
+            Owner owner = context.getBean(Owner.class);
+            System.out.println(owner);
         }
     }
 
