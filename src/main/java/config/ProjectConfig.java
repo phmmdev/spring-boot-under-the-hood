@@ -49,7 +49,7 @@ public class ProjectConfig
         return owner;
     }*/
 
-    @Bean
+    /*@Bean
     @Qualifier("dog1")
     public Dog dog1()
     {
@@ -65,5 +65,5 @@ public class ProjectConfig
         Dog dog =  new Dog();
         dog.setName("Marco");
         return dog;
-    }
+    }*/
 }
