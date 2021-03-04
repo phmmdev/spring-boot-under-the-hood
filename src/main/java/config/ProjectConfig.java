@@ -4,10 +4,11 @@ import beans.Dog;
 import beans.MyBean;
 import beans.Owner;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.*;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackages = {"services", "repositories", "beans"})
@@ -49,7 +50,7 @@ public class ProjectConfig
         return owner;
     }*/
 
-    /*@Bean
+    @Bean
     @Qualifier("dog1")
     public Dog dog1()
     {
@@ -65,5 +66,21 @@ public class ProjectConfig
         Dog dog =  new Dog();
         dog.setName("Marco");
         return dog;
-    }*/
+    }
+
+    @Bean
+    public DataSource dataSource()
+    {
+        var dataSource =  new DriverManagerDataSource();
+        dataSource.setUrl("jdbc:mysql://localhost/demo");
+        dataSource.setUsername("phmm");
+        dataSource.setPassword("phmm");
+        return dataSource;
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate()
+    {
+        return new JdbcTemplate(dataSource());
+    }
 }

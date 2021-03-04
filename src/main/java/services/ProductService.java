@@ -1,5 +1,6 @@
 package services;
 
+import model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repositories.ProductRepository;
@@ -19,8 +20,8 @@ public class ProductService
         this.productRepository = productRepository;
     }
 
-    public void addProduct()
+    public void addProduct(Product product)
     {
-        productRepository.addProduct();
+        productRepository.addProduct(product);
     }
 }

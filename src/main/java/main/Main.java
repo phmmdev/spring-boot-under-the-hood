@@ -4,8 +4,12 @@ import beans.Dog;
 import beans.MyBean;
 import beans.Owner;
 import config.ProjectConfig;
+import model.Product;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import repositories.ProductRepository;
 import services.ProductService;
+
+import java.util.List;
 
 public class Main
 {
@@ -38,8 +42,17 @@ public class Main
             dog.setName("Marco");*/
 
 
-            Owner owner = context.getBean(Owner.class);
-            System.out.println(owner);
+           /* Owner owner = context.getBean(Owner.class);
+            System.out.println(owner);*/
+
+            ProductRepository productRepository = context.getBean(ProductRepository.class);
+
+           /* Product product =  new Product(0, "product1", 10.00);
+            productRepository.addProduct(product);
+            */
+
+            List<Product> productList =  productRepository.getProducts();
+            productList.forEach(System.out::println);
         }
     }
 
