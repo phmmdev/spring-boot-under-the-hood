@@ -8,7 +8,7 @@ Repository used to study about springboot concepts in a deeply way
 
 - [X] Introduction about Spring Framework Context;
 - [X] Learn how to manage Context with Qualifiers and Wiring objects;
-- [ ] DataBase connectiosn, working with adapters;
+- [X] DataBase connectiosn, working with adapters;
 - [ ] AOP, and cool stuff;
 - [ ] Tricks about @Transaction;
 - [ ] How to deal with transaction propagation;
